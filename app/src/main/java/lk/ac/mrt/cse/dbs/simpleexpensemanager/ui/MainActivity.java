@@ -28,6 +28,7 @@ import android.support.v7.widget.Toolbar;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.R;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.ExpenseManager;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.InMemoryDemoExpenseManager;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.dbImpl.InDbAccountDAO;
 
 public class MainActivity extends AppCompatActivity {
     private ExpenseManager expenseManager;
@@ -45,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    InDbAccountDAO myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDb = new InDbAccountDAO(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
