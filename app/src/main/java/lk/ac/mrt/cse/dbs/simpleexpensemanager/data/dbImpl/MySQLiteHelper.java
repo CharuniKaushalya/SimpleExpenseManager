@@ -4,18 +4,21 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.AccountDAO;
-
 /**
  * Created by Charuni on 12/5/2015.
  */
-public class InDbAccountDAO extends SQLiteOpenHelper {
-
+public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "130274U.db";
     public static final String TABLE_NAME_1 = "account";
     public static final String TABLE_NAME_2 = "transaction";
     public static final String TABLE_NAME_3 = "expense_type";
-    public InDbAccountDAO(Context context) {
+
+    public static final String T1_COL_1 = "accountNo";
+    public static final String T1_COL_2 = "bank";
+    public static final String T1_COL_3 = "accountHolderName";
+    public static final String T1_COL_4 = "balance";
+
+    public MySQLiteHelper(Context context) {
         super(context,DATABASE_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
     }
