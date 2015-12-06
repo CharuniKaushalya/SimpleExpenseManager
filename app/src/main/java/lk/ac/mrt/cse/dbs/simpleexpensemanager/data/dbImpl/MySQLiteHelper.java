@@ -18,6 +18,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String T1_COL_3 = "accountHolderName";
     public static final String T1_COL_4 = "balance";
 
+    public static final String T3_COL_1 = "transactionID";
+    public static final String T3_COL_2 = "amount";
+    public static final String T3_COL_3 = "date";
+    public static final String T3_COL_4 = "accountNo";
+    public static final String T3_COL_5 = "expense_type_id";
+
     public MySQLiteHelper(Context context) {
         super(context,DATABASE_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
