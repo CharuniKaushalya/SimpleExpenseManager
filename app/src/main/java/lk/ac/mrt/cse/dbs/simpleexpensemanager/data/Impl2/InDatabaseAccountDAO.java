@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.PersistentExpenseManager;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.AccountDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.dbImpl.MySQLiteHelper;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.exception.InvalidAccountException;
@@ -25,7 +26,7 @@ public class InDatabaseAccountDAO implements AccountDAO {
             MySQLiteHelper.T1_COL_2, MySQLiteHelper.T1_COL_3,MySQLiteHelper.T1_COL_4};
     private String[] accColumn = { MySQLiteHelper.T1_COL_1};
 
-    public InDatabaseAccountDAO(Context context) {
+    public InDatabaseAccountDAO(PersistentExpenseManager context) {
         accounts = null;
         dbHelper = new MySQLiteHelper(context);
     }
